@@ -8,7 +8,33 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="./assets/css/style.css" />
+<link rel="stylesheet" href="./assets/css/style.css" />
 </head>
 <body>
+
+  <div id="login-overlay">
+    <div id="login-box">
+      <h2>Bem-vindo ao <span>MindFrame</span></h2>
+      <p>Entre para continuar</p>
+      <input type="text" id="login-user" placeholder="Usuário" />
+      <input type="password" id="login-pass" placeholder="Senha" />
+      <p id="login-erro"></p>
+      <button id="btn-login">Entrar</button>
+      <small>Use: <b>admin</b> / <b>1234</b></small>
+    </div>
+  </div>
+
+  <nav id="navbar">
+    <a href="#" class="logo">Mind<span>Frame</span></a>
+    <ul id="nav-links">
+      <li><a href="#sobre">Sobre</a></li>
+      <li><a href="#resolucao">Resolução</a></li>
+      <li><a href="#tecnologia">Tecnologia</a></li>
+      <li><a href="#time">Time</a></li>
+    </ul>
+    <button id="hamburger">☰</button>
+  </nav>
+
+  <script src="./assets/js/script.js"></script>
 </body>
 </html>

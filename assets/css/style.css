@@ -53,3 +53,63 @@ h2 span {
   font-weight: 500;
   margin-bottom: 0.6rem;
 }
+
+/*NAVBAR*/
+
+#navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--nav);
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 32px;
+  transition: background 0.3s;
+}
+
+#navbar.rolado {
+  background: rgba(7, 7, 15, 0.92);
+  border-bottom: 1px solid var(--borda);
+}
+
+.logo {
+  font-family: 'Cinzel', serif;
+  font-size: 1.3rem;
+  font-weight: 900;
+  color: var(--texto);
+  text-decoration: none;
+}
+
+.logo span {
+  color: var(--roxo);
+}
+
+#nav-links {
+  list-style: none;
+  display: flex;
+  gap: 36px;
+}
+
+#nav-links a {
+  color: var(--texto-mudo);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+#nav-links a:hover {
+  color: var(--texto);
+}
+
+#hamburger {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--texto);
+  font-size: 1.5rem;
+  cursor: pointer;
+}
