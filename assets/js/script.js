@@ -156,3 +156,47 @@ var elementosAnimados = document.querySelectorAll(".card, .passo, .tech-item, .m
 for (var m = 0; m < elementosAnimados.length; m++) {
   observador.observe(elementosAnimados[m]);
 }
+var jaExibiu = false;
+
+window.addEventListener("scroll", function () {
+  var secaoTime = document.getElementById("time");
+  if (!secaoTime || jaExibiu) return;
+  if (secaoTime.getBoundingClientRect().top < window.innerHeight * 0.7) {
+    jaExibiu = true;
+    mostrarAlerta("Conheça o time por trás do MindFrame! 👥");
+  }
+});
+
+
+var btnFeedback = document.createElement("button");
+btnFeedback.textContent = "💬 Feedback";
+
+btnFeedback.style.position     = "fixed";
+btnFeedback.style.bottom       = "24px";
+btnFeedback.style.right        = "24px";
+btnFeedback.style.background   = "#8B7CF6";
+btnFeedback.style.color        = "#fff";
+btnFeedback.style.border       = "none";
+btnFeedback.style.borderRadius = "100px";
+btnFeedback.style.padding      = "12px 22px";
+btnFeedback.style.fontFamily   = "'Cinzel', serif";
+btnFeedback.style.fontSize     = "0.85rem";
+btnFeedback.style.fontWeight   = "700";
+btnFeedback.style.cursor       = "pointer";
+btnFeedback.style.zIndex       = "800";
+btnFeedback.style.boxShadow    = "0 4px 20px rgba(139,124,246,0.4)";
+btnFeedback.style.transition   = "transform 0.2s";
+
+btnFeedback.addEventListener("mouseover", function () { this.style.transform = "translateY(-3px)"; });
+btnFeedback.addEventListener("mouseout",  function () { this.style.transform = "translateY(0)"; });
+
+btnFeedback.addEventListener("click", function () {
+  var feedback = prompt("O que você achou do MindFrame? Deixe seu feedback:");
+  if (feedback && feedback.trim() !== "") {
+    mostrarAlerta("Obrigado pelo feedback: \"" + feedback + "\" 💜");
+  } else if (feedback !== null) {
+    mostrarAlerta("Nenhum feedback digitado.");
+  }
+});
+
+document.body.appendChild(btnFeedback);
