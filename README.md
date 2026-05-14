@@ -106,3 +106,13 @@ O arquivo `script.js` foi desenvolvido em **JavaScript puro**, sem frameworks ou
 - `IntersectionObserver` para animar cards, passos e membros ao entrar na viewport
 
 ---
+
+## 👌 Time
+
+| Integrante | RM |
+|------------|----|
+| Caique Kenji Yafuco| 570368 |
+| Guilherme Tome Nogueira| 570144 |
+| Lucas de Andrade Astorini | 569119 |
+| Sabrina Lopes da Silva | 571870 |
+| Sofia Satomi Hagio | 569120 
