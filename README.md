@@ -114,31 +114,36 @@ O arquivo `script.js` foi desenvolvido em **JavaScript puro**, sem frameworks ou
     <td align="center">
       <a href="https://github.com/pgasaabyy">
         <img src="https://avatars.githubusercontent.com/u/178240823?v=4" width="80px;" alt="pgasaabyy"/>
-        <br /><sub><b>pgasaabyy</b></sub>
+        <br /><sub><b>Sabrina Silva</b></sub>
+       <br /><sub><b>RM 571870</b></sub>
       </a>
     </td>
     <td align="center">
       <a href="https://github.com/SofiaHagio">
         <img src="https://avatars.githubusercontent.com/u/229319671?v=4" width="80px;" alt="Julia"/>
         <br /><sub><b>Sofia Hagio</b></sub>
+       <br /><sub><b>RM 569120</b></sub>
       </a>
     </td>
     <td align="center">
       <a href="https://github.com/KenjiCaique">
         <img src="https://avatars.githubusercontent.com/u/90990678?v=4" width="80px;" alt="Larissa"/>
-        <br /><sub><b>KCaique Kenji</b></sub>
+        <br /><sub><b>Caique Kenji</b></sub>
+       <br /><sub><b>RM 570361</b></sub>
       </a>
     </td>
     <td align="center">
       <a href="https://github.com/astorini">
         <img src="https://avatars.githubusercontent.com/u/229319391?v=4" width="80px;" alt="MaviSz01"/>
         <br /><sub><b>Lucas Astorini</b></sub>
+       <br /><sub><b>RM 569119</b></sub>
       </a>
     </td>
     <td align="center">
       <a href="https://github.com/GTomeN">
         <img src="https://avatars.githubusercontent.com/u/267492078?v=4" width="80px;" alt="Natan"/>
         <br /><sub><b>Guilherme Tomé</b></sub>
+       <br /><sub><b>RM 570144 </b></sub>
       </a>
     </td>
   </tr>
