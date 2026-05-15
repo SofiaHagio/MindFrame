@@ -4,48 +4,48 @@
 
 ---
 
-## Sobre o Projeto
+## Sobre o projeto
 
-O **Modo Estudo** resolve um problema comum entre estudantes: fotografar conteúdo, seja do quadro ou de anotações pessoais por exemplo, e depois não conseguir encontrá-las. A solução permite organizar as capturas em pastas por matéria, salvar fotos diretamente nelas e ser possível a busca de qualquer imagem por palavra-chave usando reconhecimento de texto (OCR).
+O **Modo Estudo** resolve um problema comum entre estudantes: fotografar conteúdo do quadro ou de anotações pessoais e depois não conseguir encontrá-las. Esta página web apresenta o conceito da ferramenta, suas funcionalidades planejadas e o time por trás do projeto.
+ 
+A página foi construída como **site estático** com HTML, CSS e JavaScript puro — sem frameworks ou bibliotecas externas.
 
-### Funcionalidades
-
-- **Pastas por Matéria** — criar e nomear pastas com as disciplinas que desejar, com cores para identificação rápida
-- **Câmera Integrada** — fotografar e escolher a pasta de destino em poucos toques, sendo rápido e eficiente
-- **Busca por OCR** — busca inteligente que lê o texto dentro das fotos e retorna resultados por palavra-chave
-- **Gestão Completa** — renomear, excluir pastas e mover fotos entre elas quando necessário
-
----
-
-## 💻 Tecnologias Utilizadas
-
-| Tecnologia | Descrição | Categoria |
-|---|---|---|
-| React Native | Framework mobile para iOS e Android com uma única base de código | Core |
-| Expo | Plataforma que simplifica acesso à câmera, arquivos e builds | Platform |
-| SQLite | Banco de dados local para armazenar fotos, pastas e textos OCR | Database |
-| ML Kit (OCR) | Reconhecimento de texto em imagens, funciona completamente offline | AI/ML |
-| Expo FileSystem | Gerenciamento de arquivos de imagem no dispositivo | Storage |
-| React Navigation | Navegação fluida entre telas com tabs, stacks e modais | Navigation |
-| TypeScript | Tipagem estática para maior segurança e produtividade no código | Language |
-| Jest | Testes unitários para garantir qualidade das funcionalidades | Testing |
+### Funcionalidades apresentadas
+ 
+- **Hero com slideshow** — carrossel de 6 imagens exibindo telas da ferramenta
+- **Seção de funcionalidades** — visão geral do que a ferramenta oferecerá (pastas por matéria, câmera integrada, busca por OCR e gestão completa)
+- **Modal de vídeo** — demonstração do protótipo da ferramenta em vídeo
+- **Seção de tecnologias** — stack planejada para o desenvolvimento futuro
+- **Seção do time** — apresentação dos integrantes com fotos
+- **Login de acesso** — tela de autenticação antes de visualizar o conteúdo
+- **Botão de feedback** — coleta de comentários dos visitantes
 
 ---
 
-## Estrutura do Repositório
+## 💻 Tecnologias utilizadas
+ 
+| Tecnologia | Descrição |
+|---|---|
+| HTML5 | Estrutura e marcação semântica da página |
+| CSS3 | Estilização completa com variáveis, animações e responsividade |
+| JavaScript (ES5/ES6) | Toda a lógica interativa, sem frameworks ou bibliotecas externas |
+
+---
+
+## Estrutura do repositório
 
 ```
 MindFrame
-├── index.html               # Página principal
+├── index.html               ← Página principal
 ├── assets/
 │   ├── css/
-│   │   └── style.css        # Estilização 
+│   │   └── style.css        ← Estilização 
 │   ├── js/
-│   │   └── script.js        # Lógica interativa (login, slideshow, modais, animações)
+│   │   └── script.js        ← Lógica interativa (login, slideshow, modais, animações)
 │   └── img/
-│       ├── carrossel1.png   # Imagens do slideshow (6 no total)
+│       ├── carrossel1.png   ← Imagens do slideshow (6 no total)
 │       ├── ...
-│       ├── Lucas.png        # Fotos dos membros do time
+│       ├── Lucas.png        ← Fotos dos membros do time
 │       ├── Tomé.png
 │       ├── Caique.png
 │       ├── Sabrina.jpg
