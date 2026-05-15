@@ -107,12 +107,39 @@ O arquivo `script.js` foi desenvolvido em **JavaScript puro**, sem frameworks ou
 
 ---
 
-## 👌 Time
+## Time de Desenvolvimento
 
-| Integrante | RM |
-|------------|----|
-| Caique Kenji Yafuco| 570368 |
-| Guilherme Tome Nogueira| 570144 |
-| Lucas de Andrade Astorini | 569119 |
-| Sabrina Lopes da Silva | 571870 |
-| Sofia Satomi Hagio | 569120 
+<table align="center">
+  <tr>
+    <td align="center">
+      <a href="https://github.com/pgasaabyy">
+        <img src="https://avatars.githubusercontent.com/u/178240823?v=4" width="80px;" alt="pgasaabyy"/>
+        <br /><sub><b>pgasaabyy</b></sub>
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/SofiaHagio">
+        <img src="https://avatars.githubusercontent.com/u/229319671?v=4" width="80px;" alt="Julia"/>
+        <br /><sub><b>Sofia Hagio</b></sub>
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/KenjiCaique">
+        <img src="https://avatars.githubusercontent.com/u/90990678?v=4" width="80px;" alt="Larissa"/>
+        <br /><sub><b>KCaique Kenji</b></sub>
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/astorini">
+        <img src="https://avatars.githubusercontent.com/u/229319391?v=4" width="80px;" alt="MaviSz01"/>
+        <br /><sub><b>Lucas Astorini</b></sub>
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/GTomeN">
+        <img src="https://avatars.githubusercontent.com/u/267492078?v=4" width="80px;" alt="Natan"/>
+        <br /><sub><b>Guilherme Tomé</b></sub>
+      </a>
+    </td>
+  </tr>
+</table>
