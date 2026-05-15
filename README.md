@@ -72,34 +72,34 @@ open index.html
 
 > **Login padrão:** usuário `admin` / senha `1234`
 
-## JavaScript — Requisitos Implementados
+## JavaScript — Requisitos implementados
 
 O arquivo `script.js` foi desenvolvido em **JavaScript puro**, sem frameworks ou bibliotecas externas, cobrindo todos os requisitos da disciplina:
 
-### 1. Manipulação Dinâmica de Elementos e Eventos do DOM
+### 1. Manipulação dinâmica de elementos e eventos do DOM
 - Navbar que altera seu estilo ao rolar a página (`classList.add("rolado")`)
 - Botão de feedback criado em tempo de execução via `document.createElement`
 - Enquadramento das fotos do time aplicado via `style.objectPosition` lendo o atributo `data-pos` de cada `<img>`
 
-### 2. Validação de Formulários e Login
+### 2. Validação de formulários e login
 - Verificação de campos vazios antes de submeter
 - Checagem de credenciais (`admin` / `1234`)
 - Exibição de mensagem de erro inline sem recarregar a página
 - Limpeza do campo de senha em caso de erro
 
-### 3. Alertas e Prompts
+### 3. Alertas e prompts
 - `prompt()` usado após login para capturar o nome do usuário
 - `prompt()` usado no botão de feedback para coletar comentários
 - Alerta personalizado exibido dentro da própria página (sem `alert()` nativo)
 - Alerta automático disparado ao rolar até a seção do time
 
-### 4. Slideshow de Imagens
+### 4. Slideshow de imagens
 - Carrossel com 6 imagens no hero, com efeito de fade (`opacity` 0 → 1)
 - Autoplay a cada 5 segundos com `setInterval`
 - Botões de navegação manual (anterior e próximo) que pausam o autoplay
 - Contador de slides atualizado dinamicamente (`1 / 6`, `2 / 6`, etc.)
 
-### 5. Criação e Gerenciamento de Eventos com o DOM
+### 5. Criação e gerenciamento de eventos com o DOM
 - Eventos de `click`, `keydown`, `scroll` e `mouseover` / `mouseout`
 - Menu hamburguer para mobile com `classList.toggle`
 - Modal de vídeo que para o iframe ao fechar (zerando o `src`)
@@ -107,7 +107,7 @@ O arquivo `script.js` foi desenvolvido em **JavaScript puro**, sem frameworks ou
 
 ---
 
-## Time de Desenvolvimento
+## Time de desenvolvimento
 
 <table align="center">
   <tr>
@@ -128,7 +128,7 @@ O arquivo `script.js` foi desenvolvido em **JavaScript puro**, sem frameworks ou
     <td align="center">
       <a href="https://github.com/KenjiCaique">
         <img src="https://avatars.githubusercontent.com/u/90990678?v=4" width="80px;" alt="Larissa"/>
-        <br /><sub><b>Caique Kenji</b></sub>
+        <br /><sub><b>Caique Yafuco</b></sub>
        <br /><sub><b>RM 570361</b></sub>
       </a>
     </td>
@@ -142,8 +142,8 @@ O arquivo `script.js` foi desenvolvido em **JavaScript puro**, sem frameworks ou
     <td align="center">
       <a href="https://github.com/GTomeN">
         <img src="https://avatars.githubusercontent.com/u/267492078?v=4" width="80px;" alt="Natan"/>
-        <br /><sub><b>Guilherme Tomé</b></sub>
-       <br /><sub><b>RM 570144 </b></sub>
+        <br /><sub><b>Guilherme Nogueira</b></sub>
+       <br /><sub><b>RM 570144</b></sub>
       </a>
     </td>
   </tr>
