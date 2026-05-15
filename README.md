@@ -142,7 +142,7 @@ O arquivo `script.js` foi desenvolvido em **JavaScript puro**, sem frameworks ou
     <td align="center">
       <a href="https://github.com/GTomeN">
         <img src="https://avatars.githubusercontent.com/u/267492078?v=4" width="80px;" alt="Natan"/>
-        <br /><sub><b>Guilherme Nogueira</b></sub>
+        <br /><sub><b>Guilherme Tomé</b></sub>
        <br /><sub><b>RM 570144</b></sub>
       </a>
     </td>
