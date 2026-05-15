@@ -57,7 +57,7 @@ MindFrame
 
 ## Como executar
 
-Por ser uma landing page estática, basta abrir o arquivo diretamente no navegador:
+Por ser uma página web estática, basta abrir o arquivo diretamente no navegador:
 
 ```bash
 # Clone o repositório
