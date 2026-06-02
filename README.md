@@ -8,7 +8,7 @@
 
 O **Modo Estudo** resolve um problema comum entre estudantes: fotografar conteúdo do quadro ou de anotações pessoais e depois não conseguir encontrá-las. Esta página web apresenta o conceito da ferramenta, suas funcionalidades planejadas e o time por trás do projeto.
  
-A página foi construída como site estático com HTML, CSS e JavaScript puro — sem frameworks ou bibliotecas externas.
+A página foi construída como site estático com HTML, CSS e JavaScript puro - sem frameworks ou bibliotecas externas.
 
 ---
 
@@ -17,7 +17,7 @@ A página foi construída como site estático com HTML, CSS e JavaScript puro �
 - **Hero com slideshow**: carrossel de 6 imagens exibindo telas da ferramenta
 - **Seção de funcionalidades**: visão geral do que a ferramenta oferecerá (pastas por matéria, câmera integrada, busca por OCR e gestão completa)
 - **Modal de vídeo**: demonstração do protótipo da ferramenta em vídeo
-- **Seção de tecnologias: stack planejada para o desenvolvimento futuro
+- **Seção de tecnologias**: stack planejada para o desenvolvimento futuro
 - **Seção do time**: apresentação dos integrantes com fotos
 - **Login de acesso**: tela de autenticação antes de visualizar o conteúdo
 - **Botão de feedback**: coleta de comentários dos visitantes
