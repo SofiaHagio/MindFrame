@@ -10,6 +10,8 @@ O **Modo Estudo** resolve um problema comum entre estudantes: fotografar conteú
  
 A página foi construída como site estático com HTML, CSS e JavaScript puro — sem frameworks ou bibliotecas externas.
 
+---
+
 ### 🚀 Funcionalidades apresentadas
  
 - **Hero com slideshow**: carrossel de 6 imagens exibindo telas da ferramenta
