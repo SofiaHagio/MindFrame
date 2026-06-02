@@ -12,7 +12,7 @@ A página foi construída como site estático com HTML, CSS e JavaScript puro �
 
 ---
 
-### 🚀 Funcionalidades apresentadas
+## 🚀 Funcionalidades apresentadas
  
 - **Hero com slideshow**: carrossel de 6 imagens exibindo telas da ferramenta
 - **Seção de funcionalidades**: visão geral do que a ferramenta oferecerá (pastas por matéria, câmera integrada, busca por OCR e gestão completa)
