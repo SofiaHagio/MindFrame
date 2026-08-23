@@ -1,153 +1,170 @@
-# 👩‍🎓 MindFrame — Modo Estudo
+# MindFrame — Modo Estudo
 
-> Ferramenta educacional integrada à câmera do dispositivo que permite ao estudante organizar, buscar e gerenciar fotos tiradas em sala de aula ou dos próprios estudos de qualquer lugar.
+Projeto acadêmico desenvolvido para a disciplina de Web Development do curso de Engenharia de Software da FIAP.
 
----
+O MindFrame foi pensado para estudantes que costumam fotografar lousas, slides e anotações e depois têm dificuldade para encontrar esse conteúdo. Nesta sprint, o protótipo que antes estava em HTML, CSS e JavaScript foi migrado para React e passou a contar com uma área funcional de organização de materiais.
 
-## 📌 Descrição do projeto
+## Tecnologias utilizadas
 
-O **Modo Estudo** resolve um problema comum entre estudantes: fotografar conteúdo do quadro ou de anotações pessoais e depois não conseguir encontrá-las. Esta página web apresenta o conceito da ferramenta, suas funcionalidades planejadas e o time por trás do projeto.
- 
-A página foi construída como site estático com HTML, CSS e JavaScript puro - sem frameworks ou bibliotecas externas.
+- React 19
+- Vite 8
+- JavaScript
+- HTML5
+- CSS3
+- localStorage
 
----
+## Funcionalidades
 
-## 🚀 Funcionalidades apresentadas
- 
-- **Hero com slideshow**: carrossel de 6 imagens exibindo telas da ferramenta
-- **Seção de funcionalidades**: visão geral do que a ferramenta oferecerá (pastas por matéria, câmera integrada, busca por OCR e gestão completa)
-- **Modal de vídeo**: demonstração do protótipo da ferramenta em vídeo
-- **Seção de tecnologias**: stack planejada para o desenvolvimento futuro
-- **Seção do time**: apresentação dos integrantes com fotos
-- **Login de acesso**: tela de autenticação antes de visualizar o conteúdo
-- **Botão de feedback**: coleta de comentários dos visitantes
+- Login de acesso ao protótipo;
+- carrossel com as telas do projeto;
+- criação de matérias;
+- escolha de cor para cada matéria;
+- adição de materiais com tema e imagem opcional;
+- busca por matéria, tema, nome do arquivo ou anotação;
+- estatísticas do acervo;
+- marcação de materiais como favoritos para revisão rápida;
+- criação e edição de anotações de texto em cada material;
+- histórico de ações;
+- exclusão de materiais para a lixeira;
+- restauração de materiais excluídos;
+- persistência dos dados usando localStorage;
+- layout responsivo para computador e celular.
 
----
+### Novidades da Sprint 3
 
-## 💻 Tecnologias utilizadas
- 
-| Tecnologia | Descrição |
-|---|---|
-| HTML5 | Estrutura e marcação semântica da página |
-| CSS3 | Estilização completa com variáveis, animações e responsividade |
-| JavaScript (ES5/ES6) | Toda a lógica interativa, sem frameworks ou bibliotecas externas |
+Nesta sprint foram acrescentadas duas funcionalidades ao Modo Estudo:
 
----
+**Favoritos:** cada material pode ser marcado ou desmarcado usando o botão de estrela. Os itens marcados também aparecem reunidos na aba "Favoritos", facilitando a revisão de conteúdos considerados importantes antes de uma prova.
 
-## ▶️ Como executar
+**Anotações:** cada material pode receber uma anotação de texto com até 300 caracteres. A anotação pode ser criada, editada ou removida e também passa a fazer parte da busca geral do acervo.
 
-Por ser uma página web estática, basta abrir o arquivo diretamente no navegador:
+Tanto a informação de favorito quanto as anotações são armazenadas junto aos materiais no `localStorage`, portanto continuam disponíveis mesmo depois de atualizar ou fechar a página no mesmo navegador.
+
+## Componentes React
+
+A aplicação foi dividida em componentes funcionais. A relação pai e filho pode ser observada principalmente neste fluxo:
+
+```text
+App
+└── ModoEstudo
+    ├── Dashboard
+    ├── Busca
+    ├── NovaMateriaForm
+    ├── MateriaCard
+    │   ├── AdicionarFotoForm
+    │   └── FotoCard
+    ├── Favoritos
+    │   └── FotoCard
+    ├── Historico
+    └── Lixeira
+```
+
+O componente `App` mantém os principais dados da aplicação e envia informações e funções para os componentes filhos por meio de props. O componente `FotoCard` é reutilizado tanto dentro das matérias quanto na aba de favoritos.
+
+## Uso do localStorage
+
+O localStorage é utilizado para manter os dados mesmo depois que a página é atualizada ou o navegador é fechado.
+
+Dados armazenados:
+
+- `mindframe_usuario`
+- `mindframe_materias`
+- `mindframe_historico`
+- `mindframe_lixeira`
+
+Os campos de favorito e anotação ficam dentro de cada material salvo em `mindframe_materias`.
+
+## Uso de Math
+
+As operações da classe `Math` aparecem em funções reais da aplicação:
+
+- `Math.random()` e `Math.floor()` para auxiliar na criação de identificadores e no sorteio de cores;
+- `Math.round()` para arredondar a média de materiais por matéria;
+- `Math.max()` para encontrar a quantidade de materiais da maior pasta.
+
+## Requisitos para executar
+
+É necessário ter o Node.js instalado. Para esta versão do Vite, utilize Node.js 20.19 ou superior, ou Node.js 22.12 ou superior.
+
+## Como instalar
+
+Clone o repositório:
 
 ```bash
-# Clone o repositório
 git clone https://github.com/SofiaHagio/MindFrame.git
-
-# Acesse a pasta
-cd MindFrame-main
-
-# Abra no navegador
-open index.html
 ```
 
-> **Login padrão:** usuário `admin` / senha `1234`
+Entre na pasta do projeto:
 
----
-
-## JavaScript - Requisitos implementados
-
-O arquivo `script.js` foi desenvolvido em **JavaScript puro**, sem frameworks ou bibliotecas externas, cobrindo todos os requisitos da disciplina:
-
-> 1. Manipulação dinâmica de elementos e eventos do DOM
-- Navbar que altera seu estilo ao rolar a página (`classList.add("rolado")`)
-- Botão de feedback criado em tempo de execução via `document.createElement`
-- Enquadramento das fotos do time aplicado via `style.objectPosition` lendo o atributo `data-pos` de cada `<img>`
-
-> 2. Validação de formulários e login
-- Verificação de campos vazios antes de submeter
-- Checagem de credenciais (`admin` / `1234`)
-- Exibição de mensagem de erro inline sem recarregar a página
-- Limpeza do campo de senha em caso de erro
-
-> 3. Alertas e prompts
-- `prompt()` usado após login para capturar o nome do usuário
-- `prompt()` usado no botão de feedback para coletar comentários
-- Alerta personalizado exibido dentro da própria página (sem `alert()` nativo)
-- Alerta automático disparado ao rolar até a seção do time
-
-> 4. Slideshow de imagens
-- Carrossel com 6 imagens no hero, com efeito de fade (`opacity` 0 → 1)
-- Autoplay a cada 5 segundos com `setInterval`
-- Botões de navegação manual (anterior e próximo) que pausam o autoplay
-- Contador de slides atualizado dinamicamente (`1 / 6`, `2 / 6`, etc.)
-
-> 5. Criação e gerenciamento de eventos com o DOM
-- Eventos de `click`, `keydown`, `scroll` e `mouseover` / `mouseout`
-- Menu hamburguer para mobile com `classList.toggle`
-- Modal de vídeo que para o iframe ao fechar (zerando o `src`)
-- `IntersectionObserver` para animar cards, passos e membros ao entrar na viewport
-
----
-
-## 🗂️ Estrutura do repositório
-
+```bash
+cd MindFrame
 ```
-MindFrame/
-├── index.html ← Página principal
-├── assets/
-│   ├── css/
-│   │   └── style.css ← Estilização 
-│   ├── js/
-│   │   └── script.js ← Lógica interativa (login, slideshow, modais, animações)
-│   └── img/
-│       ├── carrossel1.png ← Imagens do slideshow (6 no total)
-│       ├── ...
-│       ├── Lucas.png ← Fotos dos membros do time
-│       ├── Tomé.png
-│       ├── Caique.png
-│       ├── Sabrina.jpg
-│       └── Sofia.jpeg
-└── README.md
+
+Instale as dependências:
+
+```bash
+npm install
 ```
----
 
-## 👩‍💻 Equipe 
+## Como executar
 
-<table align="center">
-  <tr>
-    <td align="center">
-      <a href="https://github.com/pgasaabyy">
-        <img src="https://avatars.githubusercontent.com/u/178240823?v=4" width="80px;" alt="pgasaabyy"/>
-        <br /><sub><b>Sabrina Silva</b></sub>
-       <br /><sub><b>RM 571870</b></sub>
-      </a>
-    </td>
-    <td align="center">
-      <a href="https://github.com/SofiaHagio">
-        <img src="https://avatars.githubusercontent.com/u/229319671?v=4" width="80px;" alt="Julia"/>
-        <br /><sub><b>Sofia Hagio</b></sub>
-       <br /><sub><b>RM 569120</b></sub>
-      </a>
-    </td>
-    <td align="center">
-      <a href="https://github.com/KenjiCaique">
-        <img src="https://avatars.githubusercontent.com/u/90990678?v=4" width="80px;" alt="Larissa"/>
-        <br /><sub><b>Caique Yafuco</b></sub>
-       <br /><sub><b>RM 570361</b></sub>
-      </a>
-    </td>
-    <td align="center">
-      <a href="https://github.com/astorini">
-        <img src="https://avatars.githubusercontent.com/u/229319391?v=4" width="80px;" alt="MaviSz01"/>
-        <br /><sub><b>Lucas Astorini</b></sub>
-       <br /><sub><b>RM 569119</b></sub>
-      </a>
-    </td>
-    <td align="center">
-      <a href="https://github.com/GTomeN">
-        <img src="https://avatars.githubusercontent.com/u/267492078?v=4" width="80px;" alt="Natan"/>
-        <br /><sub><b>Guilherme Tomé</b></sub>
-       <br /><sub><b>RM 570144</b></sub>
-      </a>
-    </td>
-  </tr>
-</table>
+Depois da instalação, execute:
+
+```bash
+npm run dev
+```
+
+O terminal mostrará o endereço local da aplicação. Normalmente será algo parecido com:
+
+```text
+http://localhost:5173
+```
+
+## Gerar versão de produção
+
+```bash
+npm run build
+```
+
+A pasta `dist` será gerada automaticamente pelo Vite.
+
+Para visualizar a versão de produção localmente:
+
+```bash
+npm run preview
+```
+
+## Usuário para teste
+
+A tela de login é exibida ao iniciar uma nova sessão do site. O acesso é mantido apenas enquanto a sessão do navegador estiver aberta.
+
+```text
+Usuário: admin
+Senha: 1234
+```
+
+## Deploy
+
+Vercel:
+
+https://mindframe-landingpage.vercel.app/
+
+> O endereço acima é o projeto utilizado pela equipe na Vercel. Após atualizar a branch conectada ao deploy, aguarde a nova publicação antes da entrega final.
+
+## Repositório
+
+GitHub:
+
+https://github.com/SofiaHagio/MindFrame
+
+## Uso de Inteligência Artificial
+
+A Inteligência Artificial foi utilizada como ferramenta de apoio durante o desenvolvimento do projeto, principalmente no processo de migração da estrutura original em HTML, CSS e JavaScript para React. A IA auxiliou na adaptação da organização dos componentes, na utilização de imports e na compreensão da nova estrutura do projeto. As implementações foram revisadas, testadas e ajustadas pela equipe de acordo com os requisitos da disciplina.
+
+## Integrantes
+
+- Caique Kenji Yafuco — RM 570368
+- Guilherme Tomé Nogueira — RM 570144
+- Lucas de Andrade Astorini — RM 569119
+- Sabrina Lopes da Silva — RM 571870
+- Sofia Satomi Hagio — RM 569120
