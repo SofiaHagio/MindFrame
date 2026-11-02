@@ -7,6 +7,8 @@ function NovaMateriaForm({ materias, onCriarMateria }) {
   const [cor, setCor] = useState(cores[0])
   const [erro, setErro] = useState('')
 
+  const rotulo = 'mb-1.5 block text-xs font-medium text-mudo'
+
   function sortearCor() {
     const indice = Math.floor(Math.random() * cores.length)
     setCor(cores[indice])
@@ -21,8 +23,6 @@ function NovaMateriaForm({ materias, onCriarMateria }) {
       return
     }
 
-    // compara ignorando maiúscula/minúscula pra não deixar criar
-    // "Matemática" e "matemática" como se fossem coisas diferentes
     const repetida = materias.some((materia) => materia.nome.toLowerCase() === nomeLimpo.toLowerCase())
     if (repetida) {
       setErro('Essa matéria já foi criada.')
@@ -36,10 +36,14 @@ function NovaMateriaForm({ materias, onCriarMateria }) {
   }
 
   return (
-    <form className="form-materia" onSubmit={enviar}>
-      <div className="form-campo cresce">
-        <label htmlFor="nome-materia">Nova matéria</label>
+    <form
+      className="flex flex-col flex-wrap items-stretch gap-4 rounded-xl border border-borda bg-superficie p-4 md:flex-row md:items-end"
+      onSubmit={enviar}
+    >
+      <div className="grid min-w-56 flex-1">
+        <label className={rotulo} htmlFor="nome-materia">Nova matéria</label>
         <input
+          className="w-full min-w-0 rounded-lg border border-borda bg-fundo p-3 outline-none focus:border-roxo/70"
           id="nome-materia"
           value={nome}
           onChange={(e) => setNome(e.target.value)}
@@ -47,9 +51,10 @@ function NovaMateriaForm({ materias, onCriarMateria }) {
         />
       </div>
 
-      <div className="form-campo campo-cor">
-        <label htmlFor="cor-materia">Cor</label>
+      <div className="grid">
+        <label className={rotulo} htmlFor="cor-materia">Cor</label>
         <input
+          className="h-12 w-full min-w-0 cursor-pointer rounded-lg border border-borda bg-fundo p-1 outline-none focus:border-roxo/70 md:w-16"
           id="cor-materia"
           type="color"
           value={cor}
@@ -57,8 +62,13 @@ function NovaMateriaForm({ materias, onCriarMateria }) {
         />
       </div>
 
-      <button type="submit" className="btn-principal">Criar matéria</button>
-      {erro && <p className="mensagem-erro form-erro">{erro}</p>}
+      <button
+        type="submit"
+        className="cursor-pointer rounded-full bg-roxo px-5 py-3 font-display text-sm font-bold text-white hover:opacity-90"
+      >
+        Criar matéria
+      </button>
+      {erro && <p className="basis-full text-sm text-perigo">{erro}</p>}
     </form>
   )
 }

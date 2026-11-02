@@ -1,86 +1,38 @@
-# MindFrame — Modo Estudo
+# MindFrame
 
-Projeto acadêmico desenvolvido para a disciplina de Web Development do curso de Engenharia de Software da FIAP.
+O MindFrame é um projeto da FIAP para estudantes que fotografam lousas, slides e anotações e depois têm dificuldade para encontrar esse conteúdo. O site reúne a landing page da solução e o Modo Estudo, uma área para organizar os materiais por matéria.
 
-O MindFrame foi pensado para estudantes que costumam fotografar lousas, slides e anotações e depois têm dificuldade para encontrar esse conteúdo. Nesta sprint, o protótipo que antes estava em HTML, CSS e JavaScript foi migrado para React e passou a contar com uma área funcional de organização de materiais.
+## Tecnologias
 
-## Tecnologias utilizadas
+- React
+- Vite
+- React Router
+- axios
+- MockAPI
+- Tailwind CSS
 
-- React 19
-- Vite 8
-- JavaScript
-- HTML5
-- CSS3
-- localStorage
+## Requisitos da Sprint 4
 
-## Funcionalidades
+- **React:** landing page integrada ao React; rotas `/`, `/login`, `/modo-estudo` (protegida) e página 404; login com Context (usuário de teste: `admin` / senha: `1234`); hooks customizados na pasta `src/hooks`; feedbacks com axios + MockAPI.
+- **Tailwind CSS:** instalado com `@tailwindcss/vite`, com as cores e fontes do projeto no `@theme`.
+- **Responsividade:** Desktop, Tablet e Mobile usando os breakpoints `sm`, `md` e `lg`.
+- **Deploy:** Git + Vercel. O `vercel.json` faz as rotas funcionarem ao atualizar a página.
 
-- Login de acesso ao protótipo;
-- carrossel com as telas do projeto;
-- criação de matérias;
-- escolha de cor para cada matéria;
-- adição de materiais com tema e imagem opcional;
-- busca por matéria, tema, nome do arquivo ou anotação;
-- estatísticas do acervo;
-- marcação de materiais como favoritos para revisão rápida;
-- criação e edição de anotações de texto em cada material;
-- histórico de ações;
-- exclusão de materiais para a lixeira;
-- restauração de materiais excluídos;
-- persistência dos dados usando localStorage;
-- layout responsivo para computador e celular.
 
-### Novidades da Sprint 3
+## API
 
-Nesta sprint foram acrescentadas duas funcionalidades ao Modo Estudo:
-
-**Favoritos:** cada material pode ser marcado ou desmarcado usando o botão de estrela. Os itens marcados também aparecem reunidos na aba "Favoritos", facilitando a revisão de conteúdos considerados importantes antes de uma prova.
-
-**Anotações:** cada material pode receber uma anotação de texto com até 300 caracteres. A anotação pode ser criada, editada ou removida e também passa a fazer parte da busca geral do acervo.
-
-Tanto a informação de favorito quanto as anotações são armazenadas junto aos materiais no `localStorage`, portanto continuam disponíveis mesmo depois de atualizar ou fechar a página no mesmo navegador.
-
-## Componentes React
-
-A aplicação foi dividida em componentes funcionais. A relação pai e filho pode ser observada principalmente neste fluxo:
+As requisições são feitas com axios, configurado em `src/utils/api.js` com a URL base do MockAPI:
 
 ```text
-App
-└── ModoEstudo
-    ├── Dashboard
-    ├── Busca
-    ├── NovaMateriaForm
-    ├── MateriaCard
-    │   ├── AdicionarFotoForm
-    │   └── FotoCard
-    ├── Favoritos
-    │   └── FotoCard
-    ├── Historico
-    └── Lixeira
+https://6ae24423bbb541292299d342.mockapi.io/api/v1
 ```
 
-O componente `App` mantém os principais dados da aplicação e envia informações e funções para os componentes filhos por meio de props. O componente `FotoCard` é reutilizado tanto dentro das matérias quanto na aba de favoritos.
+O recurso usado é o `feedbacks`:
 
-## Uso do localStorage
+- `GET /feedbacks`: lista os feedbacks, do mais recente para o mais antigo;
+- `POST /feedbacks`: envia um feedback com `nome`, `nota`, `mensagem` e `createdAt`.
 
-O localStorage é utilizado para manter os dados mesmo depois que a página é atualizada ou o navegador é fechado.
-
-Dados armazenados:
-
-- `mindframe_usuario`
-- `mindframe_materias`
-- `mindframe_historico`
-- `mindframe_lixeira`
-
-Os campos de favorito e anotação ficam dentro de cada material salvo em `mindframe_materias`.
-
-## Uso de Math
-
-As operações da classe `Math` aparecem em funções reais da aplicação:
-
-- `Math.random()` e `Math.floor()` para auxiliar na criação de identificadores e no sorteio de cores;
-- `Math.round()` para arredondar a média de materiais por matéria;
-- `Math.max()` para encontrar a quantidade de materiais da maior pasta.
+Enquanto a lista carrega aparece um indicador de carregamento. Se a API não responder, aparece uma mensagem de erro com o botão "Tentar novamente". Se o envio falhar, o texto digitado continua no formulário para a pessoa tentar de novo.
 
 ## Requisitos para executar
 
@@ -136,30 +88,27 @@ npm run preview
 
 ## Usuário para teste
 
-A tela de login é exibida ao iniciar uma nova sessão do site. O acesso é mantido apenas enquanto a sessão do navegador estiver aberta.
+A landing page pode ser vista sem login. Para entrar no Modo Estudo, use:
 
 ```text
 Usuário: admin
 Senha: 1234
 ```
 
-## Deploy
+O acesso fica salvo no navegador até clicar em "Sair", no menu.
 
-Vercel:
+
+## Deploy
 
 https://mindframe-landingpage.vercel.app/
 
-> O endereço acima é o projeto utilizado pela equipe na Vercel. Após atualizar a branch conectada ao deploy, aguarde a nova publicação antes da entrega final.
-
 ## Repositório
-
-GitHub:
 
 https://github.com/SofiaHagio/MindFrame
 
 ## Uso de Inteligência Artificial
 
-A Inteligência Artificial foi utilizada como ferramenta de apoio durante o desenvolvimento do projeto, principalmente no processo de migração da estrutura original em HTML, CSS e JavaScript para React. A IA auxiliou na adaptação da organização dos componentes, na utilização de imports e na compreensão da nova estrutura do projeto. As implementações foram revisadas, testadas e ajustadas pela equipe de acordo com os requisitos da disciplina.
+A Inteligência Artificial foi utilizada como ferramenta de apoio e consulta durante o desenvolvimento do projeto. Na Sprint 4, foi consultada para adaptar os exemplos da apostila (feitos em Next.js) para o Vite com React Router, na separação da lógica em hooks e na integração com a API usando axios. As implementações foram revisadas, testadas e ajustadas pela equipe de acordo com os requisitos da disciplina.
 
 ## Integrantes
 

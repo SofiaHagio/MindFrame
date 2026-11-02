@@ -18,21 +18,21 @@ function Favoritos({ materias, onRemoverFoto, onAlternarFavorito, onSalvarAnotac
 
   if (favoritos.length === 0) {
     return (
-      <div className="estado-vazio">
-        <strong>Nenhum favorito ainda.</strong>
+      <div className="mt-4 rounded-xl border border-dashed border-white/10 px-5 py-8 text-center text-mudo">
+        <strong className="text-texto">Nenhum favorito ainda.</strong>
         <p>Use a estrela nos materiais importantes para encontrá-los rapidamente antes de uma prova.</p>
       </div>
     )
   }
 
   return (
-    <div className="favoritos-area">
-      <div className="favoritos-intro">
-        <strong>Seus materiais importantes</strong>
-        <p>{favoritos.length} item(ns) marcado(s) para revisão rápida.</p>
+    <div>
+      <div className="rounded-xl border border-borda bg-superficie p-4">
+        <strong className="text-sm">Seus materiais importantes</strong>
+        <p className="mt-1 text-xs text-mudo">{favoritos.length} item(ns) marcado(s) para revisão rápida.</p>
       </div>
 
-      <div className="grade-fotos">
+      <div className="mt-5 grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-3">
         {favoritos.map(({ foto, materiaId, materiaNome, cor }) => (
           <FotoCard
             key={`${materiaId}-${foto.id}`}

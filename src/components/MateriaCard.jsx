@@ -13,8 +13,6 @@ function MateriaCard({
   const [adicionando, setAdicionando] = useState(false)
 
   function confirmarExclusao() {
-    // avisa que vai pra lixeira só quando tem material, senão a
-    // mensagem de confirmação fica confusa sem necessidade
     const mensagem = materia.fotos.length > 0
       ? `Excluir ${materia.nome}? Os materiais serão enviados para a lixeira.`
       : `Excluir ${materia.nome}?`
@@ -25,19 +23,25 @@ function MateriaCard({
   }
 
   return (
-    <section className="materia-card" style={{ '--cor-materia': materia.cor }}>
-      <div className="materia-topo">
+    <section
+      className="rounded-xl border border-l-4 border-borda bg-superficie p-6"
+      style={{ borderLeftColor: materia.cor }}
+    >
+      <div className="flex flex-col items-start justify-between gap-5 md:flex-row md:items-center">
         <div>
-          <span className="bolinha-cor" />
-          <h3>{materia.nome}</h3>
-          <small>{materia.fotos.length} material(is) • criada em {materia.criadaEm}</small>
+          <span className="mr-2 inline-block size-2 rounded-full" style={{ backgroundColor: materia.cor }} />
+          <h3 className="inline font-display text-base font-bold">{materia.nome}</h3>
+          <small className="mt-1 block text-xs text-mudo">{materia.fotos.length} material(is) • criada em {materia.criadaEm}</small>
         </div>
 
-        <div className="acoes-materia">
-          <button className="btn-secundario pequeno" onClick={() => setAdicionando(!adicionando)}>
+        <div className="flex items-center gap-2">
+          <button
+            className="cursor-pointer rounded-full border border-verde/50 px-3 py-2 text-xs text-verde hover:bg-verde/10"
+            onClick={() => setAdicionando(!adicionando)}
+          >
             + Adicionar
           </button>
-          <button className="btn-texto perigo" onClick={confirmarExclusao}>Excluir matéria</button>
+          <button className="cursor-pointer p-2 text-xs text-perigo" onClick={confirmarExclusao}>Excluir matéria</button>
         </div>
       </div>
 
@@ -50,11 +54,11 @@ function MateriaCard({
       )}
 
       {materia.fotos.length === 0 ? (
-        <div className="estado-vazio pequeno-vazio">
+        <div className="mt-4 rounded-xl border border-dashed border-white/10 p-4 text-center text-sm text-mudo">
           <p>Nenhum material salvo nesta matéria ainda.</p>
         </div>
       ) : (
-        <div className="grade-fotos">
+        <div className="mt-5 grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-3">
           {materia.fotos.map((foto) => (
             <FotoCard
               key={foto.id}

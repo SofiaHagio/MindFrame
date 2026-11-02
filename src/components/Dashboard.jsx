@@ -1,6 +1,4 @@
 function Dashboard({ materias }) {
-  // números rápidos pra dar uma visão geral do acervo — nada é salvo
-  // à parte, tudo é recalculado em cima do array de matérias mesmo
   const totalFotos = materias.reduce((total, materia) => total + materia.fotos.length, 0)
   const totalFavoritos = materias.reduce((total, materia) => {
     return total + materia.fotos.filter((foto) => foto.favorita).length
@@ -19,11 +17,11 @@ function Dashboard({ materias }) {
   ]
 
   return (
-    <div className="dashboard-cards">
+    <div className="mt-10 mb-6 grid grid-cols-2 gap-4 lg:grid-cols-5">
       {dados.map(([titulo, valor]) => (
-        <div className="dashboard-card" key={titulo}>
-          <span>{titulo}</span>
-          <strong>{valor}</strong>
+        <div className="rounded-xl border border-borda bg-superficie2 p-5" key={titulo}>
+          <span className="mb-1 block text-xs text-mudo">{titulo}</span>
+          <strong className="font-display text-2xl">{valor}</strong>
         </div>
       ))}
     </div>

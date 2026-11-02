@@ -33,18 +33,18 @@ const passos = [
 
 function Resolucao() {
   return (
-    <section id="resolucao" className="secao-escura resolucao">
-      <div className="inner">
-        <p className="label">02 — Resolução</p>
-        <h2>Como iremos <span>desenvolver</span></h2>
+    <section id="resolucao" className="bg-superficie px-6 py-20 md:px-10 md:py-24">
+      <div className="mx-auto max-w-6xl">
+        <p className="mb-2 text-xs font-medium tracking-widest text-verde uppercase">02 — Resolução</p>
+        <h2 className="mb-2 font-display text-4xl font-bold">Como iremos <span className="text-roxo">desenvolver</span></h2>
 
-        <div className="passos">
+        <div className="mt-12 border-l-2 border-roxo pl-5 md:pl-10">
           {passos.map((passo) => (
-            <article className="passo" key={passo.numero}>
-              <div className="passo-num">{passo.numero}</div>
-              <div className="passo-corpo">
-                <h3>{passo.titulo}</h3>
-                <p>{passo.texto}</p>
+            <article className="mb-12 flex flex-col gap-6 last:mb-0 md:flex-row" key={passo.numero}>
+              <div className="flex size-12 shrink-0 items-center justify-center rounded-full bg-roxo font-display text-sm font-bold text-white shadow-lg shadow-roxo/40">{passo.numero}</div>
+              <div>
+                <h3 className="mb-2 font-display text-lg font-bold">{passo.titulo}</h3>
+                <p className="mb-3 text-sm text-mudo">{passo.texto}</p>
               </div>
             </article>
           ))}

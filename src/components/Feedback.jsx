@@ -1,33 +1,19 @@
 import { useState } from 'react'
+import FeedbackModal from './FeedbackModal.jsx'
 
 function Feedback() {
-  const [mensagem, setMensagem] = useState('')
-
-  function pedirFeedback() {
-    const texto = window.prompt('O que você achou do MindFrame? Deixe seu feedback:')
-
-    if (texto === null) return // usuário clicou em cancelar, não faz nada
-
-    if (texto.trim() === '') {
-      setMensagem('Nenhum feedback digitado.')
-      return
-    }
-
-    setMensagem(`Obrigado pelo feedback: “${texto.trim()}” 💜`)
-  }
+  const [aberto, setAberto] = useState(false)
 
   return (
     <>
-      {mensagem && (
-        <div className="feedback-aviso">
-          <span>{mensagem}</span>
-          <button onClick={() => setMensagem('')}>✕</button>
-        </div>
-      )}
-
-      <button className="feedback-botao" onClick={pedirFeedback}>
+      <button
+        className="fixed right-4 bottom-4 z-40 cursor-pointer rounded-full bg-roxo px-6 py-3 font-display text-sm font-bold text-white shadow-lg shadow-roxo/40 transition duration-200 hover:-translate-y-1 sm:right-6 sm:bottom-6"
+        onClick={() => setAberto(true)}
+      >
         💬 Feedback
       </button>
+
+      {aberto && <FeedbackModal onFechar={() => setAberto(false)} />}
     </>
   )
 }

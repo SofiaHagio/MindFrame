@@ -4,15 +4,12 @@ function AdicionarFotoForm({ materiaId, onAdicionarFoto, onCancelar }) {
   const [tema, setTema] = useState('')
   const [arquivo, setArquivo] = useState(null)
   const [erro, setErro] = useState('')
-  // input de arquivo não aceita ser "controlado" pelo React (não dá pra
-  // setar o value dele por segurança do navegador). Pra limpar o campo
-  // depois de salvar, mudo essa key: o React entende que é um input novo
-  // e recria ele do zero, já sem o arquivo antigo selecionado
   const [chaveInputArquivo, setChaveInputArquivo] = useState(0)
 
+  const rotulo = 'mb-1.5 block text-xs font-medium text-mudo'
+  const campo = 'w-full min-w-0 rounded-lg border border-borda bg-fundo p-3 outline-none focus:border-roxo/70'
+
   function salvarComImagem(imagem) {
-    // se o usuário não escolher um arquivo, gera um nome genérico só
-    // pra não ficar em branco na listagem
     const nomeArquivo = arquivo?.name || `foto_${new Date().getTime()}.jpg`
     const novaFoto = {
       id: Date.now() + Math.floor(Math.random() * 10000),
@@ -40,9 +37,6 @@ function AdicionarFotoForm({ materiaId, onAdicionarFoto, onCancelar }) {
       return
     }
 
-    // limite meio arbitrário, mas o localStorage tem um teto de ~5MB no total
-    // e como a imagem vira base64 (fica ~33% maior), esse valor deu uma
-    // margem segura nos testes que fiz
     if (arquivo.size > 900000) {
       setErro('Para o teste com localStorage, escolha uma imagem menor que 900 KB.')
       return
@@ -55,10 +49,11 @@ function AdicionarFotoForm({ materiaId, onAdicionarFoto, onCancelar }) {
   }
 
   return (
-    <form className="form-foto" onSubmit={enviar}>
-      <div className="form-campo">
-        <label htmlFor={`tema-${materiaId}`}>Tema do material</label>
+    <form className="mt-4 grid gap-3 rounded-xl bg-fundo/50 p-4" onSubmit={enviar}>
+      <div className="grid">
+        <label className={rotulo} htmlFor={`tema-${materiaId}`}>Tema do material</label>
         <input
+          className={campo}
           id={`tema-${materiaId}`}
           value={tema}
           onChange={(e) => setTema(e.target.value)}
@@ -66,9 +61,10 @@ function AdicionarFotoForm({ materiaId, onAdicionarFoto, onCancelar }) {
         />
       </div>
 
-      <div className="form-campo">
-        <label htmlFor={`arquivo-${materiaId}`}>Imagem (opcional)</label>
+      <div className="grid">
+        <label className={rotulo} htmlFor={`arquivo-${materiaId}`}>Imagem (opcional)</label>
         <input
+          className={`${campo} text-xs text-mudo file:mr-3 file:rounded file:bg-superficie2 file:px-3 file:py-1 file:text-texto`}
           key={chaveInputArquivo}
           id={`arquivo-${materiaId}`}
           type="file"
@@ -77,11 +73,16 @@ function AdicionarFotoForm({ materiaId, onAdicionarFoto, onCancelar }) {
         />
       </div>
 
-      {erro && <p className="mensagem-erro">{erro}</p>}
+      {erro && <p className="text-sm text-perigo">{erro}</p>}
 
-      <div className="acoes-form">
-        <button type="submit" className="btn-principal">Salvar material</button>
-        <button type="button" className="btn-texto" onClick={onCancelar}>Cancelar</button>
+      <div className="flex items-center gap-2">
+        <button
+          type="submit"
+          className="cursor-pointer rounded-full bg-roxo px-5 py-3 font-display text-sm font-bold text-white hover:opacity-90"
+        >
+          Salvar material
+        </button>
+        <button type="button" className="cursor-pointer p-2 text-xs text-mudo hover:text-texto" onClick={onCancelar}>Cancelar</button>
       </div>
     </form>
   )
